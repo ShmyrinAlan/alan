@@ -26,13 +26,15 @@ public class MainController {
     }
 
     @DeleteMapping
-    public boolean delete(@RequestParam("id") Long id) {
-        return productRepository.delete(id);
+    public String delete(@RequestParam("id") Long id) {
+        productRepository.delete(id);
+        return "redirect:/";
     }
 
     @PutMapping
-    public ProductDTO update(@RequestBody ProductDTO productDTO) {
-        return productRepository.update(productDTO);
+    public String update(@RequestBody ProductDTO productDTO) {
+        productRepository.update(productDTO);
+        return "redirect:/";
     }
 
 }
