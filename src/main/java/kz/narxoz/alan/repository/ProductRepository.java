@@ -19,6 +19,7 @@ public class ProductRepository {
     }
     public ProductDTO save(ProductDTO productDTO) {
         productDTO.setId(id);
+        id++;
         productDTOS.add(productDTO);
         return productDTO;
     }
